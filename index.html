@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Emmanuel Global Technology | Innovation & Global Tech Solutions</title>
+  <!-- Google Fonts & simple reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fafcff;
+      color: #111827;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header / nav */
+    .navbar {
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(0px);
+      border-bottom: 1px solid #eef2f6;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #0a2b4e, #1e4a76);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+
+    .logo span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #2c6e9e;
+      display: block;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #1e293b;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #0f5b92;
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      border: 1.5px solid #1e4a76;
+      padding: 0.45rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #1e4a76;
+      transition: 0.25s;
+    }
+
+    .btn-outline-light:hover {
+      background: #1e4a76;
+      color: white;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(120deg, #f0f9ff 0%, #e6f0fa 100%);
+      padding: 5rem 0 6rem;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: #d4e6f1;
+      color: #0a466b;
+      display: inline-block;
+      padding: 0.25rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: #0a2540;
+    }
+
+    .hero-highlight {
+      color: #1f6392;
+      border-bottom: 3px solid #ffb347;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #2c3e50;
+      max-width: 550px;
+      margin: 1.2rem 0 2rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #0f5b92;
+      border: none;
+      padding: 0.85rem 2rem;
+      border-radius: 48px;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+    .btn-primary:hover {
+      background: #0a466b;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 0.85rem 2rem;
+      border-radius: 48px;
+      font-weight: 600;
+      color: #1e293b;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: #f1f5f9;
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-image i {
+      font-size: 13rem;
+      color: #1f6392;
+      opacity: 0.85;
+      filter: drop-shadow(0 12px 18px rgba(0,0,0,0.08));
+    }
+
+    /* sections */
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #0a2b4e;
+    }
+
+    .section-sub {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      color: #4a5c6c;
+      font-size: 1.05rem;
+    }
+
+    /* services grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 28px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+      transition: all 0.25s ease;
+      border: 1px solid #eef2f8;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+    }
+
+    .service-icon {
+      font-size: 2.8rem;
+      color: #1f6392;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      color: #4b5563;
+    }
+
+    /* about */
+    .about-wrap {
+      background: #ffffff;
+    }
+
+    .about-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 1.2;
+    }
+
+    .about-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #0f2d47;
+    }
+
+    .about-text p {
+      margin-bottom: 1rem;
+      color: #334155;
+    }
+
+    .stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      background: #f8fafc;
+      padding: 0.8rem 1.8rem;
+      border-radius: 64px;
+    }
+
+    .stat-number {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #0f5b92;
+    }
+
+    .about-icon {
+      flex: 0.8;
+      text-align: center;
+      background: #eef4ff;
+      padding: 2rem;
+      border-radius: 48px;
+    }
+
+    .about-icon i {
+      font-size: 7rem;
+      color: #2c6e9e;
+    }
+
+    /* contact & global map style */
+    .contact-section {
+      background: linear-gradient(115deg, #eef2fa 0%, #ffffff 100%);
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+    }
+
+    .contact-info {
+      flex: 1;
+      background: white;
+      padding: 2rem;
+      border-radius: 32px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.02);
+    }
+
+    .contact-info h3 {
+      font-size: 1.7rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin: 1.5rem 0;
+    }
+
+    .contact-detail i {
+      width: 40px;
+      height: 40px;
+      background: #eef4ff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      color: #0f5b92;
+      font-size: 1.2rem;
+    }
+
+    .contact-form {
+      flex: 1;
+      background: white;
+      padding: 2rem;
+      border-radius: 32px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.02);
+    }
+
+    .input-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .input-group input, .input-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 28px;
+      font-family: inherit;
+      background: #fefefe;
+      transition: 0.2s;
+    }
+
+    .input-group input:focus, .input-group textarea:focus {
+      outline: none;
+      border-color: #1f6392;
+      box-shadow: 0 0 0 2px rgba(31,99,146,0.2);
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      background: #0f5b92;
+      color: white;
+      border: none;
+      padding: 0.9rem;
+      border-radius: 48px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .footer {
+      background: #0a1c2c;
+      color: #cddfe7;
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-brand p {
+      margin-top: 0.8rem;
+      max-width: 260px;
+    }
+
+    .footer-links h4, .footer-social h4 {
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin: 0.5rem 0;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #b9d0e4;
+    }
+
+    .footer-social .social-icons a {
+      color: white;
+      background: #1f3b4f;
+      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 12px;
+      transition: 0.2s;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid #1f384b;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero-image i {
+        font-size: 8rem;
+      }
+      .container {
+        padding: 0 20px;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-container">
+    <div class="logo">
+      <h1>EMMANUEL GLOBAL <br><span>TECHNOLOGY</span></h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="btn-outline-light">Get a quote</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <!-- Hero section -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-globe-americas"></i>  Global Tech Leaders</div>
+        <h1>Innovation <span class="hero-highlight">without borders</span><br> Technology with purpose.</h1>
+        <p>Empowering enterprises with next‑gen IT solutions, AI-driven automation, and secure digital transformation across the globe.</p>
+        <div class="btn-group">
+          <a href="#contact" class="btn-primary">Partner with us <i class="fas fa-arrow-right"></i></a>
+          <a href="#services" class="btn-secondary">Explore solutions</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <i class="fas fa-microchip"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Core Technology Services</h2>
+      <p class="section-sub">End-to-end global IT solutions tailored for the modern digital era — from cloud infrastructure to cybersecurity.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+          <h3>Cloud & DevOps</h3>
+          <p>Scalable cloud migration, AWS/Azure, CI/CD pipelines, and Kubernetes orchestration for agile enterprises.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>CyberSecurity</h3>
+          <p>Threat monitoring, penetration testing, zero-trust architecture, and compliance (GDPR, ISO 27001).</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>AI & Data Analytics</h3>
+          <p>Machine learning models, predictive analytics, BI dashboards & intelligent automation for data-driven decisions.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-code"></i></div>
+          <h3>Software Engineering</h3>
+          <p>Custom web/mobile apps, enterprise platforms, and API integrations built with modern stacks (React, Node, Python).</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+          <h3>IT Consulting</h3>
+          <p>Digital transformation strategy, IT infrastructure audit, and global support with 24/7 helpdesk.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-robot"></i></div>
+          <h3>RPA & Automation</h3>
+          <p>Robotic process automation, workflow optimization, and smart document processing for operational efficiency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-wrap">
+    <div class="container about-inner">
+      <div class="about-text">
+        <h3>Who we are — <span style="color:#1f6392;">Emmanuel Global Technology</span></h3>
+        <p>Founded with the mission to bridge technology gaps across continents, Emmanuel Global Technology delivers elite IT solutions to startups, mid-market, and Fortune 500 clients. We blend innovation, security, and global expertise to solve complex business challenges.</p>
+        <p>With a presence in 4 continents and 12+ strategic tech hubs, we drive sustainable growth through ethical tech, cutting-edge research, and customer-centric delivery.</p>
+        <div class="stats">
+          <div class="stat-item"><span class="stat-number">200+</span> <span>Experts</span></div>
+          <div class="stat-item"><span class="stat-number">34+</span> <span>Countries</span></div>
+          <div class="stat-item"><span class="stat-number">500+</span> <span>Projects</span></div>
+        </div>
+      </div>
+      <div class="about-icon">
+        <i class="fas fa-chalkboard-user"></i>
+        <p style="margin-top:1rem; font-weight:500;">Global innovation hub</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & global reach -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Let’s connect globally</h2>
+      <p class="section-sub">We’re ready to power your next digital leap — reach out to our team 24/7.</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3><i class="fas fa-map-marker-alt"></i> Worldwide presence</h3>
+          <p>Headquarters & regional offices spanning North America, Europe, Asia & Africa.</p>
+          <div class="contact-detail">
+            <i class="fas fa-building"></i>
+            <div><strong>HQ – Accra Swaleng, GHANA</strong><br>251 Little Falls Drive, Wilmington, DE 19808</div>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-phone-alt"></i>
+            <div><strong>Phone</strong><br>+233 203558183</div>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <div><strong>Email</strong><br>hello@emmanuelglobal.tech</div>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-clock"></i>
+            <div><strong>Support</strong><br>24/7 Global Tech Desk</div>
+          </div>
+          <div style="margin-top: 1.2rem;">
+            <i class="fab fa-whatsapp" style="background:#25D366; color:white; padding:10px; border-radius:50%;"></i> 
+            <span style="margin-left:8px;">+233 593134432 (WhatsApp business)</span>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3>Request a consultation</h3>
+          <form id="demoForm" action="#" method="post">
+            <div class="input-group">
+              <input type="text" placeholder="Full name" id="fullname" required>
+            </div>
+            <div class="input-group">
+              <input type="email" placeholder="Business email" id="email" required>
+            </div>
+            <div class="input-group">
+              <input type="text" placeholder="Company / Organization" id="company">
+            </div>
+            <div class="input-group">
+              <textarea rows="3" placeholder="Tell us about your technology needs..." id="message" required></textarea>
+            </div>
+            <button type="submit" id="submitBtn">Send message <i class="fas fa-paper-plane"></i></button>
+            <p id="formFeedback" style="margin-top: 12px; font-size: 0.85rem; text-align:center;"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h2 style="color:white;">EMMANUEL GLOBAL TECH</h2>
+        <p>Innovation · Integrity · Global Impact</p>
+        <p>© 2026 — shaping the future of enterprise technology.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Global Network</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p style="margin-top: 16px;">Certified Minority Tech Enterprise<br>ISO 27001 & SOC2 compliant</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>Emmanuel Global Technology — bridging innovation across borders. All trademarks belong to their respective owners.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Simple form handling (no backend, just demo feedback) -->
+<script>
+  (function() {
+    const form = document.getElementById('demoForm');
+    const feedback = document.getElementById('formFeedback');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const fullname = document.getElementById('fullname')?.value.trim();
+        const email = document.getElementById('email')?.value.trim();
+        const message = document.getElementById('message')?.value.trim();
+        if (!fullname || !email || !message) {
+          feedback.style.color = '#c2410c';
+          feedback.innerHTML = '❌ Please fill in all required fields (Name, Email, Message).';
+          return;
+        }
+        if (!email.includes('@') || !email.includes('.')) {
+          feedback.style.color = '#c2410c';
+          feedback.innerHTML = '⚠️ Please enter a valid email address.';
+          return;
+        }
+        // success simulation
+        feedback.style.color = '#0f5b92';
+        feedback.innerHTML = '✅ Thank you! A global tech specialist will respond within 24 hours.';
+        form.reset();
+        setTimeout(() => {
+          feedback.innerHTML = '';
+        }, 5000);
+      });
+    }
+  })();
+</script>
+</body>
+</html>
